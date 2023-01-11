@@ -1,4 +1,4 @@
-# COMP110 Workspace - Spring 2022
+# COMP110 Workspace - Spring 2023
 
 Your work in the course will be completed in this workspace. Instructions for the two most common tasks you'll perform can be found below.
 
