@@ -38,11 +38,11 @@ Your work in the course will be completed in this workspace. Instructions for th
 
 When you are first setting up your personal workspace repository, you will need to follow these instructions to connect the repository on your computer with your personal "backup" course repository on GitHub. As we add new material through the course, you will then be able to easily back it up to your backup repo.
 
-1. Navigate a web browser to <https://classroom.github.com/a/cpE28oXS>
+1. Navigate a web browser to <https://classroom.github.com/a/jq7i3yN9>
 2. Join the Classroom by selecting your ONYEN (Clicking "Skip to the next step" is also OK)
 3. Click "Accept this Assignment"
 4. When the workspace is getting setup you may need to refresh until it tells you you're ready to go!
-5. Click the link to your personal backup repository that looks something like this `https://github.com/comp110-22s/comp110-workspace-22s-krisjordan` (except instead of `krisjordan` you will see your GitHub username).
+5. Click the link to your personal backup repository that looks something like this `https://github.com/comp110-2023s/comp110-workspace-alyssabyrnes` (except instead of `alyssabyrnes` you will see your GitHub username).
 6. Toward the top of the page it will say "Quick setup" and you will see two buttons: HTTPS and SSH. Click HTTPS and copy the text of the URL in the box to the right of the buttons (or click the clipboard icon)
 7. With your workspace open in VSCode, type in _Git: Add Remote_ and press enter with the option selected.
 10. In the blank text box that appears, paste in the URL to your backup repository that you just copied. Press enter.
