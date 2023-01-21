@@ -1,0 +1,14 @@
+"""Knock Knock"""
+
+inter_cow: str = input("Do you want an interupting cow")
+
+print("Knock Knock")
+if (inter_cow == "yes"):
+    print("...who's there?")
+    print("Interupting cow.")
+    print("...interupting cow wh--")
+    print("MOOO!!!!")
+else:
+    print("kill yourself")
+
+
