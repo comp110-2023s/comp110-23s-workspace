@@ -32,6 +32,8 @@ if user_input[4] == char_val:
     count += 1 
 print(str(count) + " instance of " + char_val + " found in " + user_input)
 
+print("a")
+
 
 
 
