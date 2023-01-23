@@ -38,10 +38,10 @@ if (word[3]) == letter:
     x = x + 1
 if (word[4]) == letter:
     x = x + 1
-if x == 0:
-    print("No")
 
-if x != 1:
-    print(x,"instances of", letter, "found in", word)
-else:
-    print(x,"instance of", letter, "found in", word)    
+if x == 1:
+    print(x, "instance of", letter, "found in", word)
+if x >= 2:
+    print(x, "instances of", letter, "found in", word) 
+if x == 0:
+    print("No instances of", letter, "found in", word) 
