@@ -31,5 +31,3 @@ if user_input[4] == char_val:
     print(char_val + " found at index 4 ")
     count += 1 
 print(str(count) + " instances of " + char_val + " found in " + user_input)
-
-print(" No instances of " + char_val + "in" + user_input)
