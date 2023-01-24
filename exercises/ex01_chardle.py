@@ -34,6 +34,6 @@ if user_input[4] == char_val:
 if match_count > 1:
     print(str(match_count) + " instances of " + char_val + " found in " + user_input)
 elif match_count == 1:
-     print(str(match_count) + " instance of " + char_val + " found in " + user_input)
+    print(str(match_count) + " instance of " + char_val + " found in " + user_input)
 else:
     print("No instances of " + char_val + " found in " + user_input)
