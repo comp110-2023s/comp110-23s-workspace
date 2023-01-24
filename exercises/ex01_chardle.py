@@ -8,12 +8,12 @@ if len(user_input) != 5:
     exit()
 
 char_val = input("Enter a single character: ")
-print("Searching for " + char_val + " in " + user_input) 
 if len(char_val) != 1:
     print("Error: Character must be a single character.")
     exit()
 
 match_count = 0
+print("Searching for " + char_val + " in " + user_input) 
 
 if user_input[0] == char_val:
     print(char_val + " found at index 0")
