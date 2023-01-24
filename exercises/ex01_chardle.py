@@ -16,19 +16,19 @@ if len(char_val) != 1:
 match_count = 0
 
 if user_input[0] == char_val:
-    print(char_val + " found at index 0 ")
+    print(char_val + " found at index 0")
     match_count += 1
 if user_input[1] == char_val:
-    print(char_val + " found at index 1 ")
+    print(char_val + " found at index 1")
     match_count += 1
 if user_input[2] == char_val:
-    print(char_val + " found at index 2 ")
+    print(char_val + " found at index 2")
     match_count += 1
 if user_input[3] == char_val:
-    print(char_val + " found at index 3 ")
+    print(char_val + " found at index 3")
     match_count += 1
 if user_input[4] == char_val:
-    print(char_val + " found at index 4 ")
+    print(char_val + " found at index 4")
     match_count += 1 
 
 if match_count > 1:
