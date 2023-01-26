@@ -1,0 +1,14 @@
+"""Conditionals"""
+
+light: str=input("What color is the light? ").lower()
+
+if(light=="green"):
+    print("Go like hell!")
+else:
+    if(light=="red"):
+        print("STOP!")
+    else:
+        if(light!="yellow"):
+            print("Getcho eyes checked")
+        else:
+            print("Slow it down, buster!")
