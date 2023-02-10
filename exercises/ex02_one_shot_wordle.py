@@ -9,23 +9,28 @@ WHITE_BOX: str = "A"
 GREEN_BOX: str = "B"
 YELLOW_BOX: str = "C"
 count: int = 0
+total: int = len(WORD)
 emoji: str = ""
 
-while len(emoji) <= len(WORD):
+while count <= total:
     if guess[count] == WORD[count]:
-        print(emoji + GREEN_BOX)
+        emoji + GREEN_BOX
         count = count + 1
     else:
-        print(emoji + GREEN_BOX)
+        emoji + WHITE_BOX
         count = count + 1
+
+
 
 
 while playing == True:
     if len(guess) == len(WORD):
         if WORD == guess:
+            print(emoji)
             print("Woo! You got it!")
             playing = False
         else:
+            print(emoji)
             print("Not quite. Play again soon!")
             playing = False
     else: 
