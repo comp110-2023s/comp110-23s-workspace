@@ -9,15 +9,16 @@ WHITE_BOX: str = "A"
 GREEN_BOX: str = "B"
 YELLOW_BOX: str = "C"
 count: int = 0
-total: int = len(WORD)
+total: int = len(WORD) - 1
 emoji: str = ""
+
 
 while count <= total:
     if guess[count] == WORD[count]:
-        emoji + GREEN_BOX
+        emoji = emoji + GREEN_BOX
         count = count + 1
     else:
-        emoji + WHITE_BOX
+        emoji = emoji + WHITE_BOX
         count = count + 1
 
 
