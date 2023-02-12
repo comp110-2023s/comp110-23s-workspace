@@ -3,37 +3,49 @@
 __author__ = "730575328"
 
 WORD: str = "python"
-guess: str = (input("What is your 6-letter guess? "))
 playing: bool = True
-WHITE_BOX: str = "A"
-GREEN_BOX: str = "B"
-YELLOW_BOX: str = "C"
+WHITE_BOX: str = "W"
+GREEN_BOX: str = "G"
+YELLOW_BOX: str = "Y"
 count: int = 0
-total: int = len(WORD) - 1
+total: int = len(WORD) 
 emoji: str = ""
-
-
-while count <= total:
-    if guess[count] == WORD[count]:
-        emoji = emoji + GREEN_BOX
-        count = count + 1
-    else:
-        emoji = emoji + WHITE_BOX
-        count = count + 1
-
-
-
+guess: str = (input(f'What is your {total}-letter guess?'))
 
 while playing == True:
     if len(guess) == len(WORD):
         if WORD == guess:
-            print(emoji)
             print("Woo! You got it!")
             playing = False
         else:
-            print(emoji)
             print("Not quite. Play again soon!")
             playing = False
     else: 
-        guess = input("That was not 6 letters! Try again: ")
+        guess = input(f'That was not {total} letters! Try again:')
+
+while count < total:
+    if guess[count] == WORD[count]:
+        emoji = emoji + GREEN_BOX
+        count = count + 1
+    else:
+        correct_letters: bool = False 
+        alternate_indices: int = 0
+        while correct_letters == False and alternate_indices < total:
+            if guess[alternate_indices] == WORD[count]:
+                emoji = emoji + YELLOW_BOX
+                correct_letters = True
+            else:
+                alternate_indices = alternate_indices + 1
+    # else:
+    #     emoji = emoji + WHITE_BOX
+    #     count = count + 1
+print(emoji)
+
+
+# while correct_letters and alternate_indices < total:
+#          if WORD[alternate_indices] == WORD[count]:
+#             corect_letters = False
+#             emoji = emoji + YELLOW_BOX
+#          else:
+#             alternate_indices = alternate_indices + 1
 
