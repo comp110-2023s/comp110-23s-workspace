@@ -15,3 +15,10 @@ while playing:
 #         guess = int(input("Wrong guess try again"))
 
 # to comment out multiple lines then use ctrl /
+WHITE_BOX: str = "W"
+GREEN_BOX: str = "G"
+YELLOW_BOX: str = "Y"
+
+WHITE_BOX: str = "\U00002B1C"
+GREEN_BOX: str = "\U0001F7E9"
+YELLOW_BOX: str = "\U0001F7E8"
