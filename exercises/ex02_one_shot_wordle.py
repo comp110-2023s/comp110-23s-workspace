@@ -10,7 +10,7 @@ player_guess: str = input(f"What is your {len(secret_word)}-letter guess? ")
 while (len(player_guess) != len(secret_word)):
     player_guess = input(f"That was not {len(secret_word)} letters! Try again: ")
 
-# establish emoji constants
+# establish emoji constants 
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
