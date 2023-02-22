@@ -2,7 +2,7 @@
 
 __author__ = "730558596"
 
-# This set defines the secret word
+# This set defines the secret word.
 secret_word: str = "python"
 guess_word: str = input(f"What is your {len(secret_word)}-letter guess? ")
 WHITE_BOX: str = "\U00002B1C"
