@@ -1,6 +1,11 @@
-"""If its raining, pack an umbrella"""
+x: int = 10
+result: str = ""
 
-weather: str = input("What is the weather like?")
+while x>=0:
+    if x % 3 > 0:
+        result=result+str(x)
+    else:
+        result = str(x)+result
+    x = x-1
 
-if (weather == "rain"):
-    print("pack an umbrella queen!")
+print(result)
