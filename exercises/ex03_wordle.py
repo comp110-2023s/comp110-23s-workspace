@@ -52,8 +52,8 @@ def main() -> None:
     playing: bool = True
     while (playing is True) and (attempt_num <= 6):  # loop that gives the player six chances to guess the correct word
         print(f"=== Turn {attempt_num}/6 ===")
-        player_guess = input_guess(len(secret_word))
-        guess_score = emojified(player_guess, secret_word)
+        player_guess: str = input_guess(len(secret_word))
+        guess_score: str = emojified(player_guess, secret_word)
         print(guess_score)
         if (player_guess == secret_word):
             print(f"You won in {attempt_num}/6 turns!")
