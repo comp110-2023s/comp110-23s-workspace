@@ -28,7 +28,7 @@ def max(input: list[int]) -> int:
             count = count + 1
         else:
             count = count + 1
-    return maxint
+    return maxint 
 
 
 def is_equal(input1: list[int], input2: list[int]) -> bool:
