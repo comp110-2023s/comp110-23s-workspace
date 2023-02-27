@@ -14,8 +14,8 @@ def all(input: list[int], num: int) -> bool:
             return False
         count = count + 1 
     return True
- 
-        
+
+
 def max(input: list[int]) -> int:
     """Returns maximum value within the list, but will result in a error if there is a empty list!"""
     if len(input) == 0: 
@@ -44,11 +44,3 @@ def is_equal(input1: list[int], input2: list[int]) -> bool:
             return False
         count = count + 1 
     return boolresult
-    
-    
-
-
-    
-   
-
-    
