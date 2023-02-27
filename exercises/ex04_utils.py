@@ -44,3 +44,4 @@ def is_equal(input1: list[int], input2: list[int]) -> bool:
             return False
         count = count + 1 
     return boolresult
+
