@@ -4,6 +4,7 @@ __author__ = "730556365"
 
 
 def all(int_list: list[int], int_checked: int) -> bool:
+    """Checks if every index of a list is the same as an inputed integer."""
     idx: int = 0
     
     if len(int_list) == 0:
@@ -18,6 +19,7 @@ def all(int_list: list[int], int_checked: int) -> bool:
 
 
 def max(int_list: list[int]) -> int:
+    """Finds the largest integer in a list."""
     if len(int_list) == 0:
         raise ValueError("max() arg is an empty List")
 
@@ -33,6 +35,7 @@ def max(int_list: list[int]) -> int:
 
 
 def is_equal(list_1: list[int], list_2: list[int]) -> bool:
+    """Checks if two separate lists are of the same length and equal at each index."""
     idx: int = 0
 
     if len(list_1) != len(list_2):
@@ -44,6 +47,3 @@ def is_equal(list_1: list[int], list_2: list[int]) -> bool:
         idx += 1
     
     return True
-
-
-
