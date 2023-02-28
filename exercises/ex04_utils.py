@@ -17,7 +17,7 @@ def all(int_list: list[int], int_checked: int) -> bool:
     return True
 
 
-def max (int_list: list[int]) -> int:
+def max(int_list: list[int]) -> int:
     if len(int_list) == 0:
         raise ValueError("max() arg is an empty List")
 
