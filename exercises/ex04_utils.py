@@ -2,11 +2,12 @@
 
 __author__ = "730575328"
 
+
 def all(list: list[int], x: int) -> bool:
     """Indicates whether the integer given matches all the ones in the list."""
     i: int = 0
     if len(list) == 0:
-       return False
+        return False
     while i < len(list):
         if list[i] != x:
             return False
@@ -23,9 +24,9 @@ def max(list: list[int]) -> int:
     max_num: int = list[i]
     while i < len(list):
         if (list[i]) > max_num:
-           max_num = list[i]
+            max_num = list[i]
         i += 1
-    return(max_num)
+    return (max_num)
 
 
 def is_equal(list1: list[int], list2: list[int]) -> bool:
