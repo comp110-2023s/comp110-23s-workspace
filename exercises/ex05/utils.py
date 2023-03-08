@@ -15,8 +15,12 @@ def only_evens(int_list: list[int]) -> list[int]:
 
 def concat(list_one: list[int], list_two: list[int]) -> list[int]:
     new_list: list[int] = list()
-    new_list.append(list_one)
-    new_list.append(list_two)
+
+    for num in list_one:
+        new_list.append(num)
+    
+    for num in list_two:
+        new_list.append(num)
 
     return new_list
 
