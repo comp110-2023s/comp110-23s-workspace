@@ -2,8 +2,8 @@
 
 __author__ = "730556365"
 
-
-def only_evens(int_list: list[int]) -> list[int]:
+def only_evens(int_list: list[int]) -> list[int] :
+    """Returns a list of only the even integers from the original list."""
     new_list: list[int] = list()
     for num in int_list:
         if num % 2 == 0:
@@ -13,9 +13,9 @@ def only_evens(int_list: list[int]) -> list[int]:
 
 
 
-def concat(list_one: list[int], list_two: list[int]) -> list[int]:
+def concat(list_one: list[int], list_two: list[int]) -> list[int] :
+    """Returns a list where the the second list inputed is added on to the end of the first list inputed."""
     new_list: list[int] = list()
-
     for num in list_one:
         new_list.append(num)
     
@@ -26,7 +26,8 @@ def concat(list_one: list[int], list_two: list[int]) -> list[int]:
 
 
 
-def sub(int_list: list[int], start_idx: int, end_idx: int) -> list[int]:
+def sub(int_list: list[int], start_idx: int, end_idx: int) -> list[int] :
+    """Returns a list cut out of the original list based on the interval of indexes given."""
     new_list: list[int] = list()
     if len(int_list) == 0 or start_idx >= len(int_list) or end_idx <= 0:
         return new_list
