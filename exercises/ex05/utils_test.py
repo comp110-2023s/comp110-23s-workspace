@@ -29,11 +29,13 @@ def test_concat_single_values() -> None:
     test_two: list[int] = [20]
     assert concat(test_one, test_two) == [10, 20]
 
+
 def test_concat_mult_values() -> None:
     """Tests the concat function when each list has multiple values."""
     test_one : list[int] = [3, 2, 1, 0]
     test_two: list[int] = [1, 2, 3]
     assert concat(test_one, test_two) == [3, 2, 1, 0, 1, 2, 3]
+
 
 def test_concat_one_list_empty() -> None:
     """Tests the concat function when one of the lists is empty."""
