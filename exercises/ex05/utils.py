@@ -1,6 +1,7 @@
-"""Excersise 05: `list` Utility Functions"""
+"""Excersise 05: `list` Utility Functions!"""
 
 __author__ = "730575328"
+
 
 def only_evens(numbers: list[int]):
     """Returns only the even numbers given a list."""
