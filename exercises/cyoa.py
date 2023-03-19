@@ -7,7 +7,7 @@ from random import randint
 points: int = 0
 player: str = ""
 num_guesses: int = 0
-secret_num: int = randint(0, 10)
+secret_num: int = randint(1, 20)
 num_clues: int = 2
 
 def main() -> None:
@@ -38,7 +38,7 @@ def main() -> None:
 
 def greet() -> None:
     global player
-    player = input(f"Welcome to Guess The Number! You will have 3 chances to guess a number from 1 to 10. You can ask for two clues per random number.\nWhat is your name?: ")
+    player = input(f"Welcome to Guess The Number! You will have 3 chances to guess a number from 1 to 20. You can ask for two clues per random number.\nWhat is your name?: ")
 
 
 
@@ -79,7 +79,7 @@ def guess_num(points: int) -> int:
         print(f"\nCorrect. The secret number is {secret_num}.\nPoint Total: {points}")
         num_guesses = 0
         num_clues = 2
-        secret_num = randint(0, 10)
+        secret_num = randint(1, 20)
     else:
         print(f"\nWrong. The secret number is not {player_guess}.")
 
