@@ -31,6 +31,7 @@ def main() -> None:
             playing = False
         else:
             print("\nInvalid input. Please type 1, 2, or 3.")
+        print(f"\nPoint Total: {points}")
     
     print(f"\nGame over, {player}. Your final score is {points}. Good luck next time.")
 
@@ -52,15 +53,12 @@ def get_clue(secret: int) -> None:
     if clue_choice == "even or odd":
         print(even_or_odd(secret))
         points -= 5
-        print(f"\nPoint Total: {points}")
     elif clue_choice == "greater than":
         print(greater_than(secret))
         points -= 5
-        print(f"\nPoint Total: {points}")
     elif clue_choice == "sum of digits":
         print(sum_of_digits(secret))
         points -= 15
-        print(f"\nPoint Total: {points}")
 
 
 
@@ -90,17 +88,20 @@ def sum_of_digits(secret: int) -> str:
 
         
 def guess_num(points: int) -> int:
-    global secret_num, num_guesses, num_clues
+    global secret_num, num_guesses, num_clues, player
+    CHECK_MARK_EMOJI: str = "\U00002705"
+    RED_X_EMOJI: str = "\U0000274C"
     player_guess = int(input("\nWhat do you think the secret number is?: "))
     
     if player_guess == secret_num:
-        points += 50
-        print(f"\nCorrect. The secret number is {secret_num}.\nPoint Total: {points}")
+        points += 100
+        print(f"\nThat's correct, {player}!!{CHECK_MARK_EMOJI}{CHECK_MARK_EMOJI}. The secret number is {secret_num}.")
         num_guesses = 0
         num_clues = 2
         secret_num = randint(1, 70)
     else:
-        print(f"\nWrong. The secret number is not {player_guess}.")
+        points -= 2
+        print(f"\nThat's wrong, Connor. {RED_X_EMOJI} The secret number is not {player_guess}.")
 
     return points
 
