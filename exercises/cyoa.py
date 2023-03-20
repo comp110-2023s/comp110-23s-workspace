@@ -41,7 +41,7 @@ def main() -> None:
 def greet() -> None:
     """Function greets the player and collects the player's name."""
     global player
-    player = input(f"Welcome to Guess The Number! You will have 3 chances to guess a number from 1 to 70. You can ask for two clues per random number.\nWhat is your name?: ")
+    player = input("Welcome to Guess The Number! You will have 3 chances to guess a number from 1 to 70. You can ask for two clues per random number.\nWhat is your name?: ")
 
 
 def get_clue(secret: int) -> None:
