@@ -10,7 +10,9 @@ num_guesses: int = 0
 secret_num: int = randint(1, 70)
 num_clues: int = 2
 
+
 def main() -> None:
+    """Function runs the main game loop"""
     global points, num_guesses, secret_num, num_clues
     greet()
     playing: bool = True
@@ -36,14 +38,14 @@ def main() -> None:
     print(f"\nGame over, {player}. Your final score is {points}. Good luck next time.")
 
 
-
 def greet() -> None:
+    """Function greets the player and collects the player's name"""
     global player
     player = input(f"Welcome to Guess The Number! You will have 3 chances to guess a number from 1 to 70. You can ask for two clues per random number.\nWhat is your name?: ")
 
 
-
 def get_clue(secret: int) -> None:
+    """Function gives the player a clue of their choice and subtracts a number of points depending on the chosen clue"""
     global points, player
     clue_choice: str = input(f"\nWhich type of clue do you want, {player}? Type 'even or odd', 'greater than', or 'sum of digits': " )
 
@@ -61,16 +63,16 @@ def get_clue(secret: int) -> None:
         points -= 15
 
 
-
 def even_or_odd(secret: int) -> str:
+    """Function determines if a number is even or odd"""
     if secret % 2 == 0:
         return "\nThe number is even."
     else:
         return "\nThe number is odd."
 
 
-
 def greater_than(secret: int) -> str:
+    """Function determines if one number is greater than another"""
     greater_int: int = int(input("\nType the number you would like to know if the secret number is greater than: "))
     if secret > greater_int:
         return f"\nThe secret number is greater than {greater_int}"
@@ -78,16 +80,16 @@ def greater_than(secret: int) -> str:
         return f"\nThe secret number is not greater than {greater_int}"
 
 
-
 def sum_of_digits(secret: int) -> str:
+    """Function sums the digits of a number"""
     digit_sum: int = 0
     for digit in str(secret): 
         digit_sum += int(digit)      
     return f"\nThe sum of the secret number's digits is {digit_sum}"
 
-
         
 def guess_num(points: int) -> int:
+    """Function asks the player to guess a number and tells the player if they are correct"""
     global secret_num, num_guesses, num_clues, player
     CHECK_MARK_EMOJI: str = "\U00002705"
     RED_X_EMOJI: str = "\U0000274C"
@@ -104,7 +106,6 @@ def guess_num(points: int) -> int:
         print(f"\nThat's wrong, Connor. {RED_X_EMOJI} The secret number is not {player_guess}.")
 
     return points
-
 
 
 if __name__ == "__main__":
