@@ -5,10 +5,12 @@ __author__ = "730556365"
 
 from exercises.ex07.dictionary import invert, favorite_color, count
 
+
 def test_invert_city_state() -> None:
     """Tests the invert function when states are the keys and cities are the values of an inputed dictionary."""
     test_dict: dict[str, str] = {"North Carolina": "Chapel Hill", "Florida": "Miami", "Georgia": "Atlanta"}
     assert invert(test_dict) == {"Chapel Hill": "North Carolina", "Miami": "Florida", "Atlanta": "Georgia"}
+
 
 def test_invert_student_score() -> None:
     """Tests the invert function when test scores are the keys and student names are the values of an inputed dictionary."""
@@ -29,7 +31,7 @@ def test_favorite_color_tie() -> None:
 
 
 def test_favorite_color_different() -> None:
-    """Tests the favorite_color function when there are a different number of appearances for each color/"""
+    """Tests the favorite_color function when there are a different number of appearances for each color."""
     test_dict: dict[str, str] = {"Sara": "red", "Jackson": "blue", "Martin": "blue", "Taylor": "purple"}
     assert favorite_color(test_dict) == "blue"
 
