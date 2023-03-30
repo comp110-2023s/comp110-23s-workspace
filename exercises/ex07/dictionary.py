@@ -17,19 +17,15 @@ def invert(inp_dict: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(inp_dict: dict[str, str]) -> str:
     """Function returns the color that appears the most in the values of a dictionary."""
-    color_list: list[str] = list()
     counter_dict: dict[str, int] = dict()
     most_common: str = ""
     highest_count: int = 0
 
     for key in inp_dict:
-        color_list.append(inp_dict[key])
-    
-    for color in color_list:
-        if color in counter_dict:
-            counter_dict[color] += 1
+        if inp_dict[key] in counter_dict:
+            counter_dict[inp_dict[key]] += 1
         else:
-            counter_dict[color] = 1
+            counter_dict[inp_dict[key]] = 1
     
     for color in counter_dict:
         if counter_dict[color] > highest_count:
