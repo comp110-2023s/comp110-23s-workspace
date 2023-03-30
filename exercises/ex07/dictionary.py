@@ -9,7 +9,7 @@ def invert(given: dict[str, str]) -> dict[str, str]:
 
     for key, value in given.items():
         if value in new_dict:
-            raise KeyError (f"{value} is already in new_dict!")
+            raise KeyError(f"{value} is already in new_dict!")
         else:
             new_dict[value] = key
     return new_dict
@@ -43,5 +43,3 @@ def count(list1: list[str]) -> dict[str, int]:
         else:
             new_dict[i] += 1
     return new_dict
-
-print(favorite_color({"max": "brown","matt": "green","julian": "brown", "jasper": "green"}))
