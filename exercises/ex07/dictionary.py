@@ -17,21 +17,24 @@ def invert(given: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(given: dict[str, str]) -> str:
     """Returns the favorite color that was repeated the most."""
-    color: list[str] = []
-    indx: int = 0
-    temp: int = 0
-    temp_color: str = ""
-    for x in given:
-        y = given[x] 
-        color.append(y)
-    for i in color:
-        for x in color:
-            if x == i: 
-                indx += 1
-        if indx > temp:
-            temp = indx
-            temp_color = i
-    return temp_color
+    most_common: dict[str,int] = {}
+
+    for name,color in given.items():
+        if color not in most_common:
+            most_common[color] = 1
+        else: 
+            most_common[color] = 1
+
+    most_common_colors: str = ""
+    most_common_count: int = 0 
+
+
+    for color,count in most_common.items():
+        if most_common[color] > most_common_count:
+            most_common_color = color
+            most_common_count = most_common[color]
+    return most_common_color
+     
 
 
 def count(list1: list[str]) -> dict[str, int]:
