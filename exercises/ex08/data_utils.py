@@ -45,8 +45,11 @@ def head(table: dict[str, list[str]], num_rows: int) -> dict[str, list[str]]:
 
     for column_name in table:
         column_values: list[str] = list()
-        for value in range(num_rows):
-            column_values.append(table[column_name][value])
+        if num_rows >= len(table[column_name]):
+            column_values = table[column_name]
+        else:
+            for value in range(num_rows):
+                column_values.append(table[column_name][value])
         reduced_table[column_name] = column_values
 
     return reduced_table
