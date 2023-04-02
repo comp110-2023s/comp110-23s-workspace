@@ -27,7 +27,7 @@ def column_values(table: list[dict[str, str]], column_name: str) -> list[str]:
     return values
 
 
-def columnar(table:list[dict[str,str]]) -> dict[str, list[str]]:
+def columnar(table:list[dict[str, str]]) -> dict[str, list[str]]:
     """Changes the orientation of the dictionary so that the column names are the keys."""
     new_table: dict[str, list[str]] = dict()
 
@@ -92,4 +92,3 @@ def count(inp_list: list[str]) -> dict[str, int]:
             counter_dict[item] = 1
 
     return counter_dict
-
