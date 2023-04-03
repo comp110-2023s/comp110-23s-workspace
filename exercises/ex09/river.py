@@ -1,7 +1,7 @@
 """File to define River class"""
 
-from fish import Fish
-from bear import Bear
+from exercises.ex09.fish import Fish
+from exercises.ex09.bear import Bear
 
 class River:
     
@@ -16,13 +16,13 @@ class River:
         for x in range(0, num_bears):
             self.bears.append(Bear())
 
+    def check_ages(self):
+        return None
+
     def bears_eating(self):
         return None
     
     def check_hunger(self):
-        return None
-                
-    def check_ages(self):
         return None
         
     def repopulate_fish(self):
