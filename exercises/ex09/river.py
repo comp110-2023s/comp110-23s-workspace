@@ -35,6 +35,7 @@ class River:
         return None
             
     def one_river_day(self):
+        """Simulate one day of life in the river"""
         # Increase day by 1
         self.day += 1
         # Simulate one day for all Bears
