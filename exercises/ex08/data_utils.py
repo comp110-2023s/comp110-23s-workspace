@@ -48,6 +48,42 @@ def head(data: dict[str, list [str]], rows: int) -> dict[str, list[str]]:
         result[row] = temp_list
     return result
 
-def select(data: dict[str, list[str]], columns: list[str]) -> dict[str, list[str]]:
-   result: dict[str, list[str]] = {}
-   
+def select(data: dict[str, list[str]], column_name: list[str]) -> dict[str, list[str]]:
+    result: dict[str, list[str]] = {}
+    for index in column_name:
+        result[index] = data[index]
+    return result
+
+def concat(table_one: dict[str, list[str]],table_two: dict[str, list[str]]) -> dict[str, list[str]]:
+    result: dict[str, list[str]] = {}
+    for row in table_one:
+        list_one: list[str] = []
+        list_one = table_one[row]
+        temp_list: list[str] = []
+        n = 0
+        for x in table_one[row]:
+            temp_list.append(list_one[n])
+            n += 1
+        result[row] = temp_list
+    for row in table_two:
+        list_two: list[str] = []
+        list_two = table_two[row]
+        temp_list: list[str] = []
+        n = 0
+        for x in table_two[row]:
+            temp_list.append(list_two[n])
+            n += 1
+        if row in result:
+            result[row] += temp_list
+        else: 
+            result[row] = temp_list
+    return result
+
+def count(given: list[str]) -> dict[str, int]:
+    result: dict[str, int] = {}
+    for key in given:
+        if key in result:
+            result[key] += 1
+        else:
+            result[key] = 1
+    return result
