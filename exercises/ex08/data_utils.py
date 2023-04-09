@@ -37,13 +37,17 @@ def columnar(table: list[dict[str,str]]) -> dict[str, list[str]]:
 def head(data: dict[str, list [str]], rows: int) -> dict[str, list[str]]:
     result: dict[str, list[str]] = {}
     n: int = 0
-    n_key: list[str] = []
-    first_column: list[str] = []
     for row in data:
-        n_key.append(row)
-    while n <= rows:
-        result[n_key[n]] = data[n_key[n]]
+        val_list: list[str] = []
+        val_list = data[row]
+        temp_list: list[str] = []
+        n = 0
+        while n <= rows - 1:
+            temp_list.append(val_list[n])
+            n += 1
+        result[row] = temp_list
     return result
 
 def select(data: dict[str, list[str]], columns: list[str]) -> dict[str, list[str]]:
    result: dict[str, list[str]] = {}
+   
