@@ -1,0 +1,21 @@
+# secret: int = 3
+# guess: int = 4
+
+# if guess == secret:
+#     print("Success!")
+#     print(str(guess) + " is the secret number!")
+# else:
+#     guess = guess + 1
+#     if guess == secret:
+#         print("success on 2nd try")
+#     else: 
+#         print("wrong guess")
+#         if (guess == secret - 1):
+#             print( "Hint")
+
+x: int = 1
+
+def f(y:int) -> int:
+    return y + x
+
+print(f(x+1))
