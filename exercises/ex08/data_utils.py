@@ -6,7 +6,7 @@ from csv import DictReader
 from tabulate import tabulate
 
 def read_csv_rows(filename:str) -> list[dict[str,str]]:
-    """Returns an organized and readible version of the inputed csv"""
+    """Returns an organized and readible version of the inputed csv."""
     result: list[dict[str,str]] = []
     file_handle = open(filename, "r", encoding="utf8")
     csv_reader = DictReader(file_handle)
@@ -16,7 +16,7 @@ def read_csv_rows(filename:str) -> list[dict[str,str]]:
     return result
 
 def column_values(table: list[dict[str,str]], header: str) -> list[str]:
-    """Returns values in a table column under a specific header"""
+    """Returns values in a table column under a specific header."""
     result: list[str] = []
     #step through table
     for row in table:
@@ -25,7 +25,7 @@ def column_values(table: list[dict[str,str]], header: str) -> list[str]:
     return result 
 
 def columnar(table: list[dict[str,str]]) -> dict[str, list[str]]:
-    """Reformats data so that it's a dictionary with column headers"""
+    """Reformats data so that it's a dictionary with column headers."""
     result: dict[str, list[str]] = {}
     #loop through keys of one row of table 
     first_row: dict[str,str] = table[0]
@@ -35,8 +35,11 @@ def columnar(table: list[dict[str,str]]) -> dict[str, list[str]]:
     return result
 
 def head(data: dict[str, list [str]], rows: int) -> dict[str, list[str]]:
+    """Produces a new column tabke with the first N rows."""
     result: dict[str, list[str]] = {}
     n: int = 0
+    if rows >= len(data):
+        return data
     for row in data:
         val_list: list[str] = []
         val_list = data[row]
@@ -49,12 +52,14 @@ def head(data: dict[str, list [str]], rows: int) -> dict[str, list[str]]:
     return result
 
 def select(data: dict[str, list[str]], column_name: list[str]) -> dict[str, list[str]]:
+    """Produces a new column table with a specific subet of the original columns."""
     result: dict[str, list[str]] = {}
     for index in column_name:
         result[index] = data[index]
     return result
 
 def concat(table_one: dict[str, list[str]],table_two: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Produces a new column table by combining two tables."""
     result: dict[str, list[str]] = {}
     for row in table_one:
         list_one: list[str] = []
@@ -80,6 +85,7 @@ def concat(table_one: dict[str, list[str]],table_two: dict[str, list[str]]) -> d
     return result
 
 def count(given: list[str]) -> dict[str, int]:
+    """Counts the number of times that a value appeared in the input."""
     result: dict[str, int] = {}
     for key in given:
         if key in result:
