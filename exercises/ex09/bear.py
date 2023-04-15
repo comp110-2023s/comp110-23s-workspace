@@ -1,6 +1,7 @@
 """File to define Bear class"""
 
 class Bear:
+    
     age: int
     hunger_score: int
 
