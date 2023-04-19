@@ -69,10 +69,11 @@ class River:
         self.view_river()
 
     def one_river_week(self):
-        while self.day <= 7:
+        x: int = 0 
+        while self.day >= 7:
             self.one_river_day
             self.day += 1
 
     def __str__(self) -> str:
-        pass
+        return f"({self.fish, self.bears})"
             
