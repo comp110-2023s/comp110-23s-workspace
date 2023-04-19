@@ -72,4 +72,7 @@ class River:
         while self.day <= 7:
             self.one_river_day
             self.day += 1
+
+    def __str__(self) -> str:
+        pass
             
