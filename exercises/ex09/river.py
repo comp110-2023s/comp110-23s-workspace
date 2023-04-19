@@ -2,8 +2,8 @@
 
 __author__ = "730575328"
 
-from fish import Fish
-from bear import Bear
+from exercises.ex09.fish import Fish
+from exercises.ex09.bear import Bear
 
 class River:
     
@@ -23,18 +23,72 @@ class River:
             self.bears.append(Bear())
 
     def check_ages(self):
+        new_bear: list[Bear] = []
+        new_fish: list[Fish] = []
+        
+        new_fish = self.fish
+        new_bear = self.bears
+
+        for x in new_bear:
+            if Bear.age > 5: 
+                new_bear.pop(x)
+        print(new_bear)
+
+        for x in new_fish:
+            if Fish.age > 5: 
+                new_fish.pop(x)
+        print(new_fish)
+
+        self.fish = new_fish 
+        self.bears = new_bear 
+        return None
+
+    def remove_fish(self, amount: int):
+        x: int = 0 
+        while x < amount: 
+            self.fish.pop(x)
+            x += 1
+        print(self.fish)
         return None
 
     def bears_eating(self):
+        for x in self.bears:
+            if len(self.fish) >= 5:
+                for x in range(0,2):
+                    self.fish.pop(x)
         return None
     
     def check_hunger(self):
+        hungry_bear: list[Bear]
+
+        hungry_bear = self.bears
+
+        for y in hungry_bear:
+            if Bear.hunger_score < 0:
+                hungry_bear.pop(y)
+            
+        self.bears = hungry_bear
         return None
         
     def repopulate_fish(self):
+        n: int = len(self.bears)
+        x: int = n//2
+        y: int = 0 
+
+        while y >= x:
+            self.bears += 1
+            y += 1
+
         return None
     
     def repopulate_bears(self):
+        n: int = len(self.bears)
+        x: int = n//2
+        y: int = 0 
+
+        while y >= x:
+            self.bears += 4
+            y += 1
         return None
     
     def view_river(self):
@@ -69,11 +123,6 @@ class River:
         self.view_river()
 
     def one_river_week(self):
-        x: int = 0 
-        while self.day >= 7:
+        while self.day <= 7:
             self.one_river_day
             self.day += 1
-
-    def __str__(self) -> str:
-        return f"({self.fish, self.bears})"
-            
