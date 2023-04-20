@@ -2,8 +2,8 @@
 
 __author__ = "730575328"
 
-from fish import Fish
-from bear import Bear
+from exercises.ex09.fish import Fish
+from exercises.ex09.bear import Bear
 
 class River:
     
@@ -54,7 +54,7 @@ class River:
     def bears_eating(self):
         for x in self.bears:
             if len(self.fish) >= 5:
-                for x in range(0,2):
+                for x in range(0,4):
                     self.fish.pop(x)
         return None
     
@@ -123,7 +123,5 @@ class River:
         self.view_river()
 
     def one_river_week(self):
-        x: int = 0
-        while x <= 7:
+        while self.day <= 7:
             self.one_river_day
-            x += 1
