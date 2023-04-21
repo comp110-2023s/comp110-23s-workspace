@@ -5,6 +5,7 @@ __author__ = "730575328"
 from exercises.ex09.fish import Fish
 from exercises.ex09.bear import Bear
 
+
 class River:
     """This is my river docstring!"""
     
@@ -69,7 +70,7 @@ class River:
         hungry_bear = self.bears
 
         for y in hungry_bear:
-            if Bear.hunger_score < 0:
+            if y.hunger_score < 0:
                 hungry_bear.remove(y)
             
         self.bears = hungry_bear
