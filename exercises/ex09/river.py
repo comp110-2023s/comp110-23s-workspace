@@ -38,9 +38,6 @@ class River:
             if Fish.age > 5: 
                 new_fish.pop(x)
         print(new_fish)
-
-     
-
         return None
 
     def remove_fish(self, amount: int):
@@ -71,24 +68,26 @@ class River:
         return None
         
     def repopulate_fish(self):
-        n: int = len(self.bears)
-        x: int = n//2
-        y: int = 0 
+        adult_fish: int = len(self.fish)
+        baby_fish: int = ((adult_fish//2) * 4)
+        y: int = 1
 
-        while y >= x:
-            self.bears += 1
-            y += 1
-
+        for animal_fish in self.bears:
+            while y <= baby_fish:
+                self.fish.append(animal_fish)
+                y += 1
         return None
     
     def repopulate_bears(self):
-        n: int = len(self.bears)
-        x: int = n//2
-        y: int = 0 
+        adult_bears: int = len(self.bears)
+        baby_bears: int = adult_bears//2
+        y: int = 1
 
-        while y >= x:
-            self.bears += 4
-            y += 1
+        for bear_animal in self.bears:
+            while y <= baby_bears:
+                self.bears.append(bear_animal)
+                y += 1
+
         return None
     
     def view_river(self):
