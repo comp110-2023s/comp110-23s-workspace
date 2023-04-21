@@ -33,12 +33,12 @@ class River:
 
         for x in new_bear:
             if x.age > 5: 
-                new_bear.pop(x)
+                new_bear.remove(x)
         print(new_bear)
 
         for x in new_fish:
             if x.age > 3: 
-                new_fish.pop(x)
+                new_fish.remove(x)
         print(new_fish)
 
         self.fish = new_fish
@@ -70,7 +70,7 @@ class River:
 
         for y in hungry_bear:
             if Bear.hunger_score < 0:
-                hungry_bear.pop(y)
+                hungry_bear.remove(y)
             
         self.bears = hungry_bear
         return None
