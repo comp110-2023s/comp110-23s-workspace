@@ -4,17 +4,15 @@ __author__ = "730575328"
 
 from exercises.ex09.fish import Fish
 from exercises.ex09.bear import Bear
-# from fish import Fish
-# from bear import Bear
 
 class River:
-    "This is my river docstring!"
+    """This is my river docstring!"""
     
     day: int
     bears: list
     fish: list
     
-    def __init__(self, num_fish: int, num_bears:int):
+    def __init__(self, num_fish: int, num_bears: int):
         """New River with num_fish Fish and num_bears Bears."""
         self.day: int = 0
         self.fish: list[Fish] = []
@@ -26,7 +24,7 @@ class River:
             self.bears.append(Bear())
 
     def check_ages(self):
-        "This is my river docstring!"
+        """This is my river docstring!"""
         new_bear: list[Bear] = []
         new_fish: list[Fish] = []
         
@@ -34,12 +32,12 @@ class River:
         new_bear = self.bears
 
         for x in new_bear:
-            if Bear.age > 5: 
+            if x.age > 5: 
                 new_bear.pop(x)
         print(new_bear)
 
         for x in new_fish:
-            if Fish.age > 3: 
+            if x.age > 3: 
                 new_fish.pop(x)
         print(new_fish)
 
@@ -48,7 +46,7 @@ class River:
         return None
 
     def remove_fish(self, amount: int):
-        "This is my river docstring!"
+        """This is my river docstring!"""
         x: int = 0 
         while x < amount: 
             self.fish.pop(x)
@@ -57,15 +55,15 @@ class River:
         return None
 
     def bears_eating(self):
-        "This is my river docstring!"
+        """This is my river docstring!"""
         for x in self.bears:
             if len(self.fish) >= 5:
                 self.remove_fish(3)
-                Bear.eat
+                x.eat
         return None
     
     def check_hunger(self):
-        "This is my river docstring!"
+        """This is my river docstring!"""
         hungry_bear: list[Bear]
 
         hungry_bear = self.bears
@@ -78,9 +76,9 @@ class River:
         return None
         
     def repopulate_fish(self):
-        "This is my river docstring!"
+        """This is my river docstring!"""
         adult_fish: int = len(self.fish)
-        baby_fish: int = ((adult_fish//2) * 4)
+        baby_fish: int = ((adult_fish // 2) * 4)
         y: int = 1
 
         for animal_fish in self.bears:
@@ -90,9 +88,9 @@ class River:
         return None
     
     def repopulate_bears(self):
-        "This is my river docstring!"
+        """This is my river docstring!"""
         adult_bears: int = len(self.bears)
-        baby_bears: int = adult_bears//2
+        baby_bears: int = adult_bears // 2
         y: int = 1
 
         for bear_animal in self.bears:
@@ -102,7 +100,7 @@ class River:
         return None
     
     def view_river(self):
-        "This is my river docstring!"
+        """This is my river docstring!"""
         y: int = len(self.fish)
         z: int = len(self.bears)
         print(f"~~~ Day {self.day}: ~~~")
@@ -134,7 +132,7 @@ class River:
         self.view_river()
 
     def one_river_week(self):
-        "This is my river docstring!"
+        """This is my river docstring!"""
         self.one_river_day()
         self.one_river_day()
         self.one_river_day()
