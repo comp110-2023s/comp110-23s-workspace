@@ -2,11 +2,8 @@
 
 __author__ = "730575328"
 
-# from exercises.ex09.fish import Fish
-# from exercises.ex09.bear import Bear
-
-from fish import Fish
-from bear import Bear
+from exercises.ex09.fish import Fish
+from exercises.ex09.bear import Bear
 
 class River:
     
