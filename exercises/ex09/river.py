@@ -2,8 +2,10 @@
 
 __author__ = "730575328"
 
-from exercises.ex09.fish import Fish
-from exercises.ex09.bear import Bear
+# from exercises.ex09.fish import Fish
+# from exercises.ex09.bear import Bear
+from fish import Fish
+from bear import Bear
 
 class River:
     
@@ -38,6 +40,9 @@ class River:
             if Fish.age > 5: 
                 new_fish.pop(x)
         print(new_fish)
+
+        self.fish = new_fish
+        self.bear = new_bear
         return None
 
     def remove_fish(self, amount: int):
@@ -51,8 +56,8 @@ class River:
     def bears_eating(self):
         for x in self.bears:
             if len(self.fish) >= 5:
-                for x in range(0,2):
-                    self.fish.pop(x)
+                self.remove_fish(3)
+                Bear.eat
         return None
     
     def check_hunger(self):
