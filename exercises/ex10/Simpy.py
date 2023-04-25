@@ -23,5 +23,19 @@ class Simpy:
             self.values.append(float)
             i += 1
 
-    def arange(self, start: float, stop: float, step: float):
+    def arange(self, start: float, stop: float, step: float = 1.0) -> list[float]:
+        i: int = start
+        index: int = start
+        Jump: int = step
+        empty_list = list[float]
+        while i < stop:
+            index += Jump
+            empty_list.append(index)
+            i += 1.0
         
+        return self.values
+    
+
+positive = Simpy([])
+positive.arange(1.0, 5.0)
+print("Actual: ", positive, " - Expected: Simpy([1.0, 2.0, 3.0, 4.0])")
