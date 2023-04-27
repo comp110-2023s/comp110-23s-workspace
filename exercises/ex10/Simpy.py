@@ -28,7 +28,7 @@ class Simpy:
             self.values.append(float)
             i += 1
 
-    def arange(self, start: float, stop: float, step: float = 1.0) -> list[float]:
+    def arange(self, start: float, stop: float, step: float = 1.0) -> None:
         """Return a new list of ranges."""
         i: int = start
         index: int = start
