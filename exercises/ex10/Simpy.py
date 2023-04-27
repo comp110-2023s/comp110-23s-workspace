@@ -27,15 +27,43 @@ class Simpy:
         i: int = start
         index: int = start
         Jump: int = step
-        empty_list = list[float]
+        empty_list = []
         while i < stop:
-            index += Jump
             empty_list.append(index)
+            index += Jump
             i += 1.0
-        
+        self.values = empty_list
         return self.values
-    
 
-positive = Simpy([])
-positive.arange(1.0, 5.0)
-print("Actual: ", positive, " - Expected: Simpy([1.0, 2.0, 3.0, 4.0])")
+    def sum(self) -> float:
+        final = sum(self.values)
+        return final
+    
+    def __add__(self, rhs:Union[float, Simpy]) -> Simpy:
+        new_list: list[Union[Simpy,float]] = 0
+        i = 0 
+
+        if type(rhs) == Simpy:
+            while i < len(self.values):
+                new_list.append(self.values[i] + rhs.values[i])
+                i += 1
+            return f"Simpy({new_list})"
+
+        new_list = []
+        i = 0
+
+        if type(rhs) == float:
+            while i < len(self.values):
+                new_list.append(self.values[i] + rhs)
+                i += 1
+            return f"Simpy ({new_list})"
+
+
+a = Simpy([1.0, 1.0, 1.0])
+b = Simpy([2.0, 3.0, 4.0])
+c = a + b
+print("Actual: ", c, " - Expected: Simpy([3.0, 4.0, 5.0])")
+print("Actual: ", a + a, " - Expected: Simpy([2.0, 2.0, 2.0])")
+print("Actual: ", b + b, " - Expected: Simpy([4.0, 6.0, 8.0])")
+
+
