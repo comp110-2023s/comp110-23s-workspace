@@ -120,13 +120,3 @@ class Simpy:
                     new_list.append(False)
                 i += 1
             return new_list 
-        
-#     def _getitem_(self, rhs: int) -> float: 
-#        return self.values[rhs]
-
-# a = Simpy([10.0, 20.0, 30.0])
-# print("Actual: ", a[0], " - Expected: 10.0")
-# print("Actual: ", a[1], " - Expected: 20.0")
-# print("Actual: ", a[2], " - Expected: 30.0")
-
-
