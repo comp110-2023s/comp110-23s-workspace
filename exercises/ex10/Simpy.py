@@ -55,43 +55,43 @@ class Simpy:
     
     def __add__(self, rhs: Union[float, Simpy]) -> Simpy:
         """Return a list of the added floats."""
-        new_list: list[Union[Simpy, float]] = []
+        new_list = []
         i = 0 
 
         if type(rhs) == Simpy:
             while i < len(self.values):
-                new_list.append(self.values[i] + rhs.values[i])
+                new_list.append(self[i] + rhs[i])
                 i += 1
-            return f"Simpy({new_list})"
+            return Simpy(new_list)
 
         new_list = []
         i = 0
 
         if type(rhs) == float:
             while i < len(self.values):
-                new_list.append(self.values[i] + rhs)
+                new_list.append(self[i] + rhs)
                 i += 1
-            return f"Simpy({new_list})"
+            return Simpy(new_list)
 
     def __pow__(self, rhs: Union[float, Simpy]) -> Simpy:
         """Return the power of the floats."""
-        new_list: list[Union[Simpy, float]] = []
+        new_list = []
         i = 0 
 
         if type(rhs) == Simpy:
             while i < len(self.values):
-                new_list.append(self.values[i] ** rhs.values[i])
+                new_list.append(self[i] ** rhs[i])
                 i += 1
-            return f"Simpy({new_list})"
+            return Simpy(new_list)
 
         new_list = []
         i = 0
 
         if type(rhs) == float:
             while i < len(self.values):
-                new_list.append(self.values[i] ** rhs)
+                new_list.append(self[i] ** rhs)
                 i += 1
-            return f"Simpy({new_list})"
+            return Simpy(new_list)
         
     def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
         """Return if they are equal."""
@@ -139,7 +139,7 @@ class Simpy:
                 i += 1
             return new_list 
     
-    def __getitem__(self, input:Union[int, list[bool]]) -> Union[float, Simpy]: 
+    def __getitem__(self, input: Union[int, list[bool]]) -> Union[float, Simpy]:
         """Return the item."""
         if type(input) == int:
             return self.values[input]
