@@ -1,7 +1,7 @@
-"""EX10: Simpy"""
+"""EX10: Simpy."""
 ####################################################
-## This file is for people who are having trouble ##
-## getting Jupyter Notebooks to work!             ##
+# This file is for people who are having trouble ##
+# getting Jupyter Notebooks to work!             ##
 ####################################################
 
 """You will implement a utility class that is helpful for 
