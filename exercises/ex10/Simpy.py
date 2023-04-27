@@ -8,16 +8,20 @@ __author__ = "730575328"
 
 
 class Simpy:
+    """My simpy class!"""
     
     values: list[float]
 
     def __init__(self, param: list[float]) -> None:
+        """Initializes my class."""
         self.values = param
 
     def __str__(self) -> str:
+        """Returns object as a string."""
         return f'Simpy({self.values})'
     
     def fill(self, float: float, int: int) -> None:
+        """Appends values into the list."""
         i = 0 
         self.values = []
         while int > i: 
@@ -25,22 +29,25 @@ class Simpy:
             i += 1
 
     def arange(self, start: float, stop: float, step: float = 1.0) -> list[float]:
+        """Works as a range function."""
         i: int = start
         index: int = start
-        Jump: int = step
+        Jump: float = step
         empty_list = []
         while i < stop:
             empty_list.append(index)
             index += Jump
-            i += 1.0
+            i += Jump
         self.values = empty_list
         return self.values
 
     def sum(self) -> float:
+        """Sums floats."""
         final = sum(self.values)
         return final
     
     def __add__(self, rhs: Union[float, Simpy]) -> Simpy:
+        """Adds the floats."""
         new_list: list[Union[Simpy,float]] = []
         i = 0 
 
@@ -60,6 +67,7 @@ class Simpy:
             return f"Simpy({new_list})"
 
     def __pow__(self, rhs: Union[float, Simpy]) -> Simpy:
+        """Powers the floats."""
         new_list: list[Union[Simpy,float]] = []
         i = 0 
 
@@ -79,6 +87,7 @@ class Simpy:
             return f"Simpy({new_list})"
         
     def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """returns if they are equal."""
         new_list: list[Union[float, Simpy]] = []
         i = 0 
 
@@ -101,6 +110,7 @@ class Simpy:
             return new_list
     
     def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Returns of they are greater than"""
         new_list: list[Union[float, Simpy]] = []
         i = 0 
 
@@ -121,15 +131,3 @@ class Simpy:
                     new_list.append(False)
                 i += 1
             return new_list 
-        
-twos = Simpy([])
-twos.fill(2.0, 3)
-print("Actual: ", twos, " - Expected: Simpy([2.0, 2.0, 2.0])") 
-twos.fill(2.0, 5)
-print("Actual: ", twos, " - Expected: Simpy([2.0, 2.0, 2.0, 2.0, 2.0])")
-
-mixed = Simpy([])
-mixed.fill(3.0, 3)
-print("Actual: ", mixed, " - Expected: Simpy([3.0, 3.0, 3.0])")
-mixed.fill(2.0, 2)
-print("Actual: ", mixed, " - Expected: Simpy([2.0, 2.0])")
