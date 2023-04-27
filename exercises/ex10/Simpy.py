@@ -15,10 +15,11 @@ class Simpy:
         self.values = param
 
     def __str__(self) -> str:
-        return f'simpy({self.values})'
+        return f'Simpy({self.values})'
     
     def fill(self, float: float, int: int) -> None:
         i = 0 
+        self.values = []
         while int > i: 
             self.values.append(float)
             i += 1
@@ -120,3 +121,15 @@ class Simpy:
                     new_list.append(False)
                 i += 1
             return new_list 
+        
+twos = Simpy([])
+twos.fill(2.0, 3)
+print("Actual: ", twos, " - Expected: Simpy([2.0, 2.0, 2.0])") 
+twos.fill(2.0, 5)
+print("Actual: ", twos, " - Expected: Simpy([2.0, 2.0, 2.0, 2.0, 2.0])")
+
+mixed = Simpy([])
+mixed.fill(3.0, 3)
+print("Actual: ", mixed, " - Expected: Simpy([3.0, 3.0, 3.0])")
+mixed.fill(2.0, 2)
+print("Actual: ", mixed, " - Expected: Simpy([2.0, 2.0])")
