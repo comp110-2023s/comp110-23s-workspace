@@ -138,4 +138,16 @@ class Simpy:
                     new_list.append(False)
                 i += 1
             return new_list 
+    
+    def __getitem_(self, input:Union[int, list[bool]]) -> Union[float, Simpy]:
+         """Return the item."""
+         if type(input) == int:
+             return self.values[input]
+         
+         return_list = []
 
+         if type(input) == list:
+            for index, item in enumerate(input):
+                 if item == True:
+                     return_list.append(self.values[index])
+            return Simpy(return_list)
