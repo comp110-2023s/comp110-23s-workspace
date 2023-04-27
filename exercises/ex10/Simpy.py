@@ -39,8 +39,8 @@ class Simpy:
         final = sum(self.values)
         return final
     
-    def __add__(self, rhs:Union[float, Simpy]) -> Simpy:
-        new_list: list[Union[Simpy,float]] = 0
+    def __add__(self, rhs: Union[float, Simpy]) -> Simpy:
+        new_list: list[Union[Simpy,float]] = []
         i = 0 
 
         if type(rhs) == Simpy:
@@ -56,14 +56,77 @@ class Simpy:
             while i < len(self.values):
                 new_list.append(self.values[i] + rhs)
                 i += 1
-            return f"Simpy ({new_list})"
+            return f"Simpy({new_list})"
 
+    def __pow__(self, rhs: Union[float, Simpy]) -> Simpy:
+        new_list: list[Union[Simpy,float]] = []
+        i = 0 
 
-a = Simpy([1.0, 1.0, 1.0])
-b = Simpy([2.0, 3.0, 4.0])
-c = a + b
-print("Actual: ", c, " - Expected: Simpy([3.0, 4.0, 5.0])")
-print("Actual: ", a + a, " - Expected: Simpy([2.0, 2.0, 2.0])")
-print("Actual: ", b + b, " - Expected: Simpy([4.0, 6.0, 8.0])")
+        if type(rhs) == Simpy:
+            while i < len(self.values):
+                new_list.append(self.values[i] ** rhs.values[i])
+                i += 1
+            return f"Simpy({new_list})"
+
+        new_list = []
+        i = 0
+
+        if type(rhs) == float:
+            while i < len(self.values):
+                new_list.append(self.values[i] ** rhs)
+                i += 1
+            return f"Simpy({new_list})"
+        
+    def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        new_list: list[Union[float, Simpy]] = []
+        i = 0 
+
+        if type(rhs) == Simpy:
+            while i < len(self.values):
+                if self.values[i] == rhs.values[i]:
+                    new_list.append(True)
+                else:
+                    new_list.append(False)
+                i += 1
+            return new_list
+        
+        if type(rhs) == float:
+            while i < len(self.values):
+                if self.values[i] == rhs:
+                    new_list.append(True)
+                else:
+                    new_list.append(False)
+                i += 1
+            return new_list
+    
+    def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        new_list: list[Union[float, Simpy]] = []
+        i = 0 
+
+        if type(rhs) == Simpy:
+            while i < len(self.values):
+                if self.values[i] > rhs.values[i]:
+                    new_list.append(True)
+                else:
+                    new_list.append(False)
+                i += 1
+            return new_list
+        
+        if type(rhs) == float:
+            while i < len(self.values):
+                if self.values[i] > rhs:
+                    new_list.append(True)
+                else:
+                    new_list.append(False)
+                i += 1
+            return new_list 
+        
+#     def _getitem_(self, rhs: int) -> float: 
+#        return self.values[rhs]
+
+# a = Simpy([10.0, 20.0, 30.0])
+# print("Actual: ", a[0], " - Expected: 10.0")
+# print("Actual: ", a[1], " - Expected: 20.0")
+# print("Actual: ", a[2], " - Expected: 30.0")
 
 
